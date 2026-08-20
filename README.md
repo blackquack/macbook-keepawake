@@ -6,6 +6,10 @@ While enabled, the app creates a user-level IOKit power assertion using `kIOPMAs
 
 macOS can still sleep during a thermal emergency. Do not put a closed, running Mac in a bag or enclosed space.
 
+## Download
+
+[Download the latest release](https://github.com/blackquack/macbook-keepawake/releases/latest).
+
 ## Build
 
 This project uses Swift Package Manager and the macOS Command Line Tools. Full Xcode is not required.
