@@ -1,29 +1,14 @@
-runTest("PMSetRunnerTests.testEnableArgumentsApplyToAllPowerSources") {
-    PMSetRunnerTests().testEnableArgumentsApplyToAllPowerSources()
+runTest("PowerAssertionTests.testStartsDisabled") {
+    PowerAssertionTests().testStartsDisabled()
 }
-runTest("PMSetRunnerTests.testDisableArgumentsApplyToAllPowerSources") {
-    PMSetRunnerTests().testDisableArgumentsApplyToAllPowerSources()
-}
-runTest("PMSetRunnerTests.testParserReadsEnabledState") {
-    try PMSetRunnerTests().testParserReadsEnabledState()
-}
-runTest("PMSetRunnerTests.testParserReadsDisabledState") {
-    try PMSetRunnerTests().testParserReadsDisabledState()
-}
-runTest("PMSetRunnerTests.testParserRejectsMissingState") {
-    PMSetRunnerTests().testParserRejectsMissingState()
-}
-runTest("ToggleCoordinatorTests.testPowerSourceDoesNotChangeCommandScope") {
-    ToggleCoordinatorTests().testPowerSourceDoesNotChangeCommandScope()
+runTest("PowerAssertionTests.testDisablingBeforeEnablingIsSafe") {
+    try PowerAssertionTests().testDisablingBeforeEnablingIsSafe()
 }
 runTest("PowerSourceMonitorTests.testBatteryIsRecognizedAsBattery") {
     PowerSourceMonitorTests().testBatteryIsRecognizedAsBattery()
 }
 runTest("PowerSourceMonitorTests.testDisplayNames") {
     PowerSourceMonitorTests().testDisplayNames()
-}
-runTest("HelperConnectionTests.testHelperIdentifiersAreStable") {
-    HelperConnectionTests().testHelperIdentifiersAreStable()
 }
 
 finishTests()

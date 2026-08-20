@@ -1,15 +1,12 @@
 import AppKit
+import Shared
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let powerSourceMonitor = PowerSourceMonitor()
-    private let helperInstaller = HelperInstaller()
-    private lazy var helperConnection = HelperConnection()
-    private lazy var stateStore = AppStateStore()
+    private let powerAssertionController = PowerAssertionController()
     private lazy var coordinator = ToggleCoordinator(
-        helperInstaller: helperInstaller,
-        helperConnection: helperConnection,
-        powerSourceMonitor: powerSourceMonitor,
-        stateStore: stateStore
+        powerAssertionController: powerAssertionController,
+        powerSourceMonitor: powerSourceMonitor
     )
     private var statusBarController: StatusBarController?
 

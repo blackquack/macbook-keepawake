@@ -53,7 +53,7 @@ enum StatusIcon {
 
     private static func symbolImage(named name: String) -> NSImage {
         let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .regular)
-        let image = NSImage(systemSymbolName: name, accessibilityDescription: "LidKeepAwake")?
+        let image = NSImage(systemSymbolName: name, accessibilityDescription: "macbook-keepawake")?
             .withSymbolConfiguration(configuration)
             ?? NSImage(size: NSSize(width: 18, height: 18))
         image.isTemplate = true

@@ -23,9 +23,11 @@ final class PowerSourceMonitor {
     func start() {
         refresh()
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
+        let timer = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in
             self?.refresh()
         }
+        self.timer = timer
+        RunLoop.main.add(timer, forMode: .common)
     }
 
     func stop() {

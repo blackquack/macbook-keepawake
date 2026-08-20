@@ -2,8 +2,8 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-APP_DIR="$ROOT_DIR/dist/LidKeepAwake.app"
-ZIP_PATH="$ROOT_DIR/dist/LidKeepAwake.zip"
+APP_DIR="$ROOT_DIR/dist/macbook-keepawake.app"
+ZIP_PATH="$ROOT_DIR/dist/macbook-keepawake.zip"
 
 if [[ ! -d "$APP_DIR" ]]; then
   "$ROOT_DIR/Scripts/build-app.sh"

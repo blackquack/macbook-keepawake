@@ -3,30 +3,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "LidKeepAwake",
+    name: "macbook-keepawake",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "LidKeepAwake", targets: ["LidKeepAwakeApp"]),
-        .executable(name: "LidKeepAwakeHelper", targets: ["LidKeepAwakeHelper"]),
+        .executable(name: "macbook-keepawake", targets: ["LidKeepAwakeApp"]),
         .executable(name: "LidKeepAwakeTests", targets: ["LidKeepAwakeTests"])
     ],
     targets: [
-        .target(name: "Shared"),
+        .target(
+            name: "Shared",
+            linkerSettings: [
+                .linkedFramework("IOKit")
+            ]
+        ),
         .executableTarget(
             name: "LidKeepAwakeApp",
             dependencies: ["Shared"],
             linkerSettings: [
                 .linkedFramework("AppKit"),
-                .linkedFramework("ServiceManagement"),
-                .linkedFramework("IOKit")
-            ]
-        ),
-        .executableTarget(
-            name: "LidKeepAwakeHelper",
-            dependencies: ["Shared"],
-            linkerSettings: [
                 .linkedFramework("IOKit")
             ]
         ),
